@@ -1,0 +1,32 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(arr) {
+      let answer = []; //빈배열
+      answer.push(arr[0]) //빈배열에 7을
+      for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > arr[i - 1]) { //자신이 앞 수보다 커야함
+          answer.push(arr[i]) //결과값에 배열을 집어넣음
+        }
+      }
+      return answer;
+    }
+
+    let arr = [7, 3, 9, 5, 6, 12];
+    console.log(solution(arr));
+  </script>
+</body>
+
+</html>
+
+arry = '';
+arry = arr + "adasf";
+
+arry = [];
+arr.push("aasdasd")

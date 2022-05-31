@@ -17,6 +17,3 @@ student
 good
 time
 student
-
-1. for문사용
-2. 조건문 넣어서

@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(s) {
+      let answer;
+      let middle = Math.floor(s.length / 2)
+      for (let i = 0; i < s.length; i++) {
+        if (s.length % 2 === 1) {
+          answer = s[middle]
+        } else {
+          answer = s[middle - 1]
+          answer = answer + s[middle]
+        }
+      }
+      return answer;
+    }
+    console.log(solution("good"));
+  </script>
+</body>
+
+</html>
