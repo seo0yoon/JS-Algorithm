@@ -9,13 +9,13 @@
   <script>
     function solution(arr) {
       let answer = [];
-      let count = 1; //기본값은 1등이여야하니까 1을 초기값으로 넣어줌
-      for (let i = 0; i < arr.length; i++) { //87점인 사람부터 한명씩 돌면서 for문에 넣어줌
-        count = 1; //사람이 바뀔때마다 카운터 다시 세팅
+      let count = 1; //기본 값은 1등이여야하니까 1을 초기값으로 넣어줌
+      for (let i = 0; i < arr.length; i++) { //87점기준으로 한명씩 돌면서 for문에 넣어줌
+        count = 1; //사람이 바뀔때마다 카운터 다시 세팅 why? 등수인데 87점이 비교를다하고 4등이라는 결과를가지고있는데 그걸 초기값으로 다시 바꿔줘야 함
         for (let j = 0; j < arr.length; j++) { //나를 제외한 모든사람고 비교
           if (arr[i] < arr[j]) { //조건문에 부합하면 실행 
             count = count + 1 //j+1
-          } else if (!arr[i] < arr[j]) { //arr[i] arr[j] 보다 크지않으면
+          } else if (!arr[i] < arr[j]) { //arr[i] arr[j] 보다 크지않으면 
             answer[i] = count
           }
         }
