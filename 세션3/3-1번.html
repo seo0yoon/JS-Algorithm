@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(s) {
+      let answer;
+      let str;
+      str = s.toUpperCase().split('').reverse().join('') //대문자로 바꿈
+      if (s.toUpperCase() === str) {
+        answer = 'YES'
+      } else {
+        answer = 'NO'
+      }
+      return answer;
+    }
+    let str = "gooG";
+    console.log(solution(str));
+  </script>
+</body>
+
+</html>
