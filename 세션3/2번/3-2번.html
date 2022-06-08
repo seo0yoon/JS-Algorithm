@@ -9,6 +9,15 @@
   <script>
     function solution(s) {
       let answer;
+      let str;
+      let strs = s.toLowerCase().replace(/[^a-z]/g, '');
+      str = s.replace(/[^a-z]/gi, '').toLowerCase().split('').reverse().join('')
+      //a-z까지인건 놔두고 그 이외의 것은 '' 없애준다. 
+      if (str === strs) {
+        answer = 'yes'
+      } else {
+        answer = 'no'
+      }
       return answer;
     }
 
