@@ -14,13 +14,13 @@
       for (let i = 0; i < arr.length; i++) {
         sum = arr[i].toString().split('').reduce((a, b) =>
           a + Number(b), 0 //초기값을 정해줘야한다.
-        ) //a는 누적되는값 b는 배열의 현재 위치
+        ) //a는 누적되는값 b는 배열의 현재 (위에서 string으로 만들어줬기때문에 다시 number로 만들어야함)
         if (max < sum) { // 누적되는 값을 비교
           max = sum // 새로 합한 값이 더 크면 max 값을 교체
-          answer = arr[i] // answer에 합한 값이 큰 index를 저장
+          answer = arr[i] // answer에 합한 값이 큰 index를 저장 (123 234 이렇게 출력되야하니까)
         } else if (max === sum) { // 합한 값이 서로 같은 index가 있다면?
-          if (answer < arr[i]) {  // 어떤 인덱스가 더 큰지 비교
-            answer = arr[i] // 더 큰 index 값을 answer에 저장
+          if (answer < arr[i]) {  // 어떤 숫자가 더 큰지 비교
+            answer = arr[i] // 더 큰 값을 answer에 저장
           }
         }
       }
