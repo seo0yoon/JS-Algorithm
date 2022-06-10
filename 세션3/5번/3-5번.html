@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(s) {
+      let answer = '';
+      let count = 1; //자신이 1이라서 
+      for (let i = 0; i < s.length; i++) {
+        if (s[i] === s[i + 1]) { //옆에도 똑같은 문자열이 있으면 카운터 1올려줘
+          count = count + 1
+        } else {
+          answer = answer + s[i]
+          if (count > 1) { //카운터가 1보다 크면?
+            answer = answer + count
+            count = 1;
+          }
+        }
+      }
+      return answer;
+    }
+    let str = "KKHSSSSSSSE";
+    console.log(solution(str));
+  </script>
+</body>
+
+</html>
