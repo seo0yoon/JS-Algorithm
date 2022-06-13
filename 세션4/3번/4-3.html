@@ -1,0 +1,43 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(test) {
+      let answer = 0;
+      let count = 0;
+      let mento = 0;
+      let menti = 0;
+      for (let i = 1; i <= test[0].length; i++) {  // 학생중에 멘토를 선정
+        for (let j = 1; j <= test[0].length; j++) {  // 멘티를 한명씩 다 돌림
+          count = 0  // 다음 멘토,멘티 선정을 위하여 count를 0으로 초기화 
+          for (let k = 0; k < test.length; k++) { // 테스트결과를 돌리는 반복문
+            for (let s = 0; s < test[0].length; s++) { // 테스트 결과중 학생의 순위를 탐색하는 반복문
+              if (test[k][s] === i) { // 멘토가 몇등인지 확인
+                mento = s  // 0 1 2 3 중에 하나를 넣어주는것 s의 인덱스값을 넣어준다.
+              }
+              if (test[k][s] === j) { // 멘티가 몇등인지 확인
+                menti = s
+              }
+            }
+            if (mento > menti) { // 멘토의 등수가 멘티의 등수보다 높으면 count+1
+              count = count + 1
+            }
+          }
+          if (count === test.length) { // 모든 테스트 결과와 count가 같다면 answer + 1
+            answer = answer + 1
+          }
+        }
+      }
+      return answer;
+    }
+    let arr = [[3, 4, 1, 2], [4, 3, 2, 1], [3, 1, 4, 2]];
+    console.log(solution(arr));
+  </script>
+</body>
+
+</html>
