@@ -12,23 +12,28 @@
       let count = 0;
       let mento = 0;
       let menti = 0;
-      for (let i = 1; i <= test[0].length; i++) {  // 학생중에 멘토를 선정
-        for (let j = 1; j <= test[0].length; j++) {  // 멘티를 한명씩 다 돌림
+      for (let i = 1; i <= test[0].length; i++) { // i=1 이유는? 0등은 존재하지않음
+        // 학생중에 멘토를 선정, 큰배열안에 작은배열에 접근해야하니까 test[0].length 로 접근,
+        for (let j = 1; j <= test[0].length; j++) {  // 멘티선정 
           count = 0  // 다음 멘토,멘티 선정을 위하여 count를 0으로 초기화 
-          for (let k = 0; k < test.length; k++) { // 테스트결과를 돌리는 반복문
-            for (let s = 0; s < test[0].length; s++) { // 테스트 결과중 학생의 순위를 탐색하는 반복문
-              if (test[k][s] === i) { // 멘토가 몇등인지 확인
+          for (let k = 0; k < test.length; k++) { // 큰 배열의 테스트결과를 돌리는 반복문
+            for (let s = 0; s < test[0].length; s++) { // 작은 배열의 테스트 결과중 학생의 순위를 탐색하는 반복문
+              if (test[k][s] === i) { // i랑 비교하여 멘토가 몇등인지 확인함
                 mento = s  // 0 1 2 3 중에 하나를 넣어주는것 s의 인덱스값을 넣어준다.
+                //test[k][s]를 넣어주면 안됨 why? test[k][s]는 배열의 값이라서 (3, 4, 1, 2) 
+                //몇등인지 확인해야하니까 우리가 필요한건 0 1 2 3 중의 하나의 인덱스 값이 필요! 
               }
               if (test[k][s] === j) { // 멘티가 몇등인지 확인
                 menti = s
               }
             }
             if (mento > menti) { // 멘토의 등수가 멘티의 등수보다 높으면 count+1
+              //1번(3 4 1 2), 2번(4 3 2 1), 3번(3 1 4 2) 학생 번호가 주어지면 1번에서 (3, 1) 성립이되고 => 카운터 +1 
+              // 2번에서 (3,1)도 성립되고 => 카운터 + 1 3번도 (3, 1) => 카운터 +1 총 3번의 카운터가 +됨 
               count = count + 1
             }
           }
-          if (count === test.length) { // 모든 테스트 결과와 count가 같다면 answer + 1
+          if (count === test.length) { // 위의 count 결과와 모든 테스트 결과와 count가 같다면 answer + 1
             answer = answer + 1
           }
         }
