@@ -1,0 +1,32 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(n, k, card) {
+      let answer = 0;
+      let sum = 0;
+      let set = new Set() // 중복된 값을 없애주기 위한 Set 생성자 사용
+      let arry = []
+      for (let i = 0; i < card.length; i++) { // 카드 3장을 뽑는 모든 경우를 기록하기 위해 반복문 3개 돌림
+        for (let j = i + 1; j < card.length; j++) {
+          for (let s = j + 1; s < card.length; s++) {
+            sum = card[i] + card[j] + card[s] // 카드 3장을 뽑고 더한 값을 저장
+            set.add(sum) // set 생성자에 카드 3장의 합을 넣고 중복되는 값을 제거
+            arry = Array.from(set).sort((a, b) => (b - a)) // 모든 결과를 배열로 만들어주고 내림차순 정렬
+            answer = arry[k - 1] // k번째 카드를 뽑는다.
+          }
+        }
+      }
+      return answer;
+    }
+    let arr = [13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
+    console.log(solution(10, 3, arr));
+  </script>
+</body>
+
+</html>
