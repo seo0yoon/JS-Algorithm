@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(arr) {
+      let sum = 0; //홀수들의 합을 넣어줘야함
+      let odd = [];
+      let min = Number.MAX_SAFE_INTEGER; // 최소값만 저장
+      let answer = [];
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 !== 0) { //배열의 인덱스 나누기 2가 0이 아니면? 홀수
+          sum = sum + arr[i] //반복문을 돌다가 홀수가 나오면 sum에다가 넣어줘
+          odd.push(arr[i]) //[77,41,53,85]
+        }
+      }
+      for (let i = 0; i < odd.length; i++) {
+        if (min > odd[i]) {
+          min = odd[i]
+        }
+      }
+      answer.push(sum, min)
+      return answer;
+    }
+
+    arr = [12, 77, 38, 41, 53, 92, 85];
+    console.log(solution(arr));
+  </script>
+</body>
+
+</html>
