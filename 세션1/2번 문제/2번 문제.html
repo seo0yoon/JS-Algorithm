@@ -8,10 +8,10 @@
 <body>
   <script>
     function solution(a, b, c) {
-      let answer
-      let sum = a + b + c
-      let max
-      let result
+      let sum = a + b + c;
+      let max;
+      let result;
+      let answer;
 
       if (a > b) {
         max = a
@@ -24,10 +24,12 @@
 
       result = sum - max
       if (result > max) {
-        answer = 'yes'
+        answer = 'YES'
       } else {
-        answer = 'no'
+        answer = 'NO'
       }
+
+
 
       return answer;
     }
