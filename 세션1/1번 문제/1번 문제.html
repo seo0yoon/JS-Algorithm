@@ -7,27 +7,20 @@
 
 <body>
   <script>
-    function solution(a, b, c, d, e) {
+    function solution(a, b, c) {
       let answer;
       if (a > b) {
-        answer = a
-      } else {
         answer = b
+      } else {
+        answer = a
       }
-      if (answer < c) {
+      if (c < answer) {
         answer = c
       }
-      if (answer < d) {
-        answer = d
-      }
-      if (answer < e) {
-        answer = e
-      }
-
       return answer;
     }
 
-    console.log(solution(10, 11, 75, 5, 55));
+    console.log(solution(6, 5, 11));
   </script>
 </body>
 
