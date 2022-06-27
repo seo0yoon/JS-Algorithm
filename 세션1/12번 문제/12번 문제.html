@@ -10,17 +10,13 @@
     function solution(s) {
       let answer = "";
       for (let i = 0; i < s.length; i++) {
-        if (s[i] === s[i].toLowerCase()) {
+        if (s[i]) {
           answer = answer + s[i].toUpperCase()
-        } else {
-          answer = answer + s[i]
         }
       }
       return answer;
-
     }
-
-    let str = "ItisTimeToStudy";
+    let str = "ItisTimeTostudy";
     console.log(solution(str));
   </script>
 </body>
