@@ -9,14 +9,12 @@
   <script>
     function solution(s) {
       let answer;
-      let middle = Math.floor(s.length / 2)
-      for (let i = 0; i < s.length; i++) {
-        if (s.length % 2 === 1) {
-          answer = s[middle]
-        } else {
-          answer = s[middle - 1]
-          answer = answer + s[middle]
-        }
+
+      if (s.length % 2 === 1) {
+        answer = s[Math.floor(s.length / 2)]  //문자열의 가운데 값을 asnwer에 넣어줘
+      } else {
+        answer = s[Math.floor(s.length / 2) - 1] //짝수일땐 가운데 2개의 문자를 출력해야하니까 -1을 해줌
+        answer = answer + s[Math.floor(s.length / 2)]
       }
       return answer;
     }
