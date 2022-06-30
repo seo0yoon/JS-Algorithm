@@ -8,17 +8,17 @@
 <body>
   <script>
     function solution(s) {
+      let str; //비교할 문자열 
       let answer;
-      let str;
-      str = s.toUpperCase().split('').reverse().join('')
-      if (s.toUpperCase() === str) {
+      str = s.toUpperCase().split('').reverse().join('') //뒤집은 문자열
+      if (s.toUpperCase() === str) { //대문자로 바꾼 문자열과, 뒤집은 문자열과 같으면?
         answer = 'YES'
       } else {
         answer = 'NO'
       }
       return answer;
     }
-    let str = "gooG";
+    let str = "phooHP";
     console.log(solution(str));
   </script>
 </body>

@@ -15,22 +15,24 @@
       let dia2 = 0;
 
       for (let i = 0; i < arr.length; i++) {
-        sumRow = 0; //재세팅해주는 이유는? arr의 10~15까지의 숫자에 다 접근을해서 더했다. 다음 행으로 넘어가려면 저장된 값을 비워줘야해서.
-        sumCol - 0;
+        sumRow = 0;
+        sumCol = 0;
         for (let j = 0; j < arr.length; j++) {
-          sumRow = sumRow + arr[i][j]
-          sumCol = sumCol + arr[j][i]
+          sumRow = sumRow + arr[i][j] // 행을 다 돌아서 저장하려는 코드
+          sumCol = sumCol + arr[j][i] // 열을 다 돌아서 저장하려는 코드
+
         }
         answer = Math.max(sumRow, sumCol, answer)
       }
 
 
       for (let i = 0; i < arr.length; i++) {
-
+        dia1 = dia1 + arr[i][i]
+        dia2 = dia2 + arr[i][arr.length - i - 1]
       }
+      answer = Math.max(dia1, dia2, answer)
       return answer;
     }
-
     let arr = [[10, 13, 10, 12, 15],
     [12, 39, 30, 23, 11],
     [11, 25, 50, 53, 15],
