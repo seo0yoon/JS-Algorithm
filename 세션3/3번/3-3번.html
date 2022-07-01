@@ -9,10 +9,11 @@
   <script>
     function solution(str) {
       let answer;
-      answer = str.replace(/[^0-9]/gi, '')
+      answer = str.replace(/[^0-9]/gi, "");
+      //0-9까지의 모든 숫자를 찾아내는 것, 숫자를 뽑아낼거기때문 i(모든 대소문자일치는 붙여주지않아도된다.)
       return parseInt(answer);
     }
-    let str = "g0en2T0s8eSoft";
+    let str = "g0en12,:T0s8eS,oft";
     console.log(solution(str));
   </script>
 </body>

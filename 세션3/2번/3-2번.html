@@ -14,6 +14,7 @@
       //대문자로 변경후 특수문자들을 찾아서 공백으로 만들어줘.
       str = s.replace(/[^a-z]/gi, '').toUpperCase().split('').reverse().join('')
       //^을 안붙여주면 [a-z]의 특수문자들만 출력되기때문에 문자열까지 같이 출력하려면 ^을 붙여줘야한다.
+
       if (str === strs) {
         answer = 'Yes'
       } else {

@@ -10,11 +10,11 @@
     function solution(str) {
       let answer = '';
       for (let i = 0; i < str.length; i++) {
-        if (!isNaN(str[i])) {
+        if (!isNaN(str[i])) { //인덱스가 숫자면 false 아니면 true
           answer = answer + str[i]
         }
       }
-      return parseInt(answer);
+      return parseInt(answer); //앞에 0을 빼고 정수로 만들어줘야하기때문에 parseInt 메소드사용
     }
     let str = "g0en2T0s8eSoft";
     console.log(solution(str));
