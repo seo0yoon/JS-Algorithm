@@ -8,15 +8,16 @@
 <body>
   <script>
     function solution(s) {
-      let answer;
       let str;
-      let strs = s.replace(/[^a-z]/gi, '').toUpperCase();
+      let answer;
+      let strs = s.toUpperCase().replace(/[^a-z]/gi, "");
+      //대문자로 변경후 특수문자들을 찾아서 공백으로 만들어줘.
       str = s.replace(/[^a-z]/gi, '').toUpperCase().split('').reverse().join('')
-      //a-z까지인건 놔두고 그 이외의 것은 '' 없애준다. 
+      //^을 안붙여주면 [a-z]의 특수문자들만 출력되기때문에 문자열까지 같이 출력하려면 ^을 붙여줘야한다.
       if (str === strs) {
-        answer = 'yes'
+        answer = 'Yes'
       } else {
-        answer = 'no'
+        answer = 'NO'
       }
       return answer;
     }
