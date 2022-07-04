@@ -7,28 +7,31 @@
 
 <body>
   <script>
-    function isPrime(num) { //소수가 아닌 조건을 조건문으로 적어줌
-      if (num === 1) return false  //1은 소수가 아니니까
-      for (let i = 2; i < num; i++) { //1은 걸러서 2부터 length는 문자열과 배열탐색만 사용 //i < num는 다도는것 
-        if (num % i === 0) { //num의 인덱스의 나머지가 0이면? 1,2,4 8,16 16을 기준으로 중간값 2,4,8이 존재하니까 
+    function isPrime(num) { //소수가 아닌 조건
+      if (num === 1) {
+        return false;
+      }
+      for (let i = 2; i < num; i++) { //1은 소수가 아니라고 위에서 걸렀고, .lenght를 붙이지 않은 이유는 ? length는 //문자열과 배열 탐색할때만 사용한다. i < num은 숫자를 다 도는 것
+        if (num % i === 0) { //num이 2고 i(2)로 나눴을때 나머지는 0이고 그럼 소수가 아니다. 그래서 false 반환
           return false;
         }
       }
-      return true //위의 조건문을 둘다 걸러줘야해서 return
+      return true; //위의 조건문을 둘다 걸려줘야해서 return
     }
 
     function solution(arr) {
-      let answer = []; //배열로 들어와야함
+      let answer = [];
       let reverse;
       for (let i = 0; i < arr.length; i++) {
-        reverse = parseInt(arr[i].toString().split('').reverse().join('')); //스플릿, 리버스, 조인 =>스트링메소드라서 스트링으로 바꿔줘야함
-        if (isPrime(reverse)) {
-          answer.push(reverse)
-        }
+        reverse = parseInt(arr[i].toString().split('').reverse().join(''));
+        if (isPrime(reverse)) { // 솔루션 함수가 실행하면 for문을 돌고, 조건문을 실행한다. 조건문안에 숫자가 소수인지 아니지를 넣어줘야하니
+          //위에서 만든 isPrime 함수를 넣고 매개변수로 reverse를 넣어준다. 만약 숫자 32면 reverse를 거쳐서 23이 되고,
+          //isPrime함수에 num이 23이 들어가고, 소수인지 아닌지를 판별해 true, false로 반환한다.
+          answer.push(reverse) // 최종적으로 걸른 값을 answer에 push해준다. (배열에 넣어줘야해서 push)
+        } //숫자이기때문에 문자열로 바꾸고, 쪼갠다음, 뒤집고, 합쳐준다.
       }
-      return answer;
+      return reverse;
     }
-
     let arr = [32, 55, 62, 20, 250, 370, 200, 30, 100];
     console.log(solution(arr));
   </script>
