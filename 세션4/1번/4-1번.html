@@ -8,9 +8,9 @@
 <body>
   <script>
     function solution(n, arr) {
-      let answer;
-      let max = 0; //초기 세팅 최대값을 0으로 넣어줘서 sum에 담긴 값과 비교 시켜준다.
       let sum;
+      let max = 0;
+      let answer;
       for (let i = 0; i < arr.length; i++) {
         sum = arr[i].toString().split('').reduce((a, b) =>
           a + Number(b), 0)
@@ -18,7 +18,7 @@
           max = sum
           answer = arr[i]
         } else if (max === sum) {
-          if (answer < arr[i]) {
+          if (answer < arr[i]) { //현재 answer에 저장된 index보다 (128) arr[i] (137)가 더 크면? answer에 arr[i]를 넣어줘
             answer = arr[i]
           }
         }
