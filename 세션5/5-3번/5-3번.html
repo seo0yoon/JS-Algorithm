@@ -8,15 +8,15 @@
 <body>
   <script>
     function solution(m, arr) {
-      let answer = 0;
+      let answer = 0;//카운터
       let sum = 0;
       for (let i = 0; i < arr.length; i++) {
         sum = 0;
         for (let j = i; j < arr.length; j++) {
-          sum = sum + arr[j]
+          sum = sum + arr[j] //sum에 값을 저장해서 인자로들어오는 m과 비교를 해줘야한다.
           if (sum === m) {
             answer = answer + 1
-            break;
+            break
           }
           if (sum > m) {
             break
