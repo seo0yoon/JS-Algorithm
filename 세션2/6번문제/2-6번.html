@@ -20,11 +20,9 @@
         for (let j = 0; j < arr.length; j++) {
           sumRow = sumRow + arr[i][j] // 행을 다 돌아서 저장하려는 코드
           sumCol = sumCol + arr[j][i] // 열을 다 돌아서 저장하려는 코드
-
         }
         answer = Math.max(sumRow, sumCol, answer)
       }
-
 
       for (let i = 0; i < arr.length; i++) {
         dia1 = dia1 + arr[i][i]
