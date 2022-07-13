@@ -1,0 +1,35 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(s) {
+      let max = Number.MIN_SAFE_INTEGER; //비교해줘야하기때문에 가장작은 숫자로 초기값 세팅
+      let sH = new Map(); // map 이라는 생성자를 만들어줌 여기서 sH는 키:밸류로 이루어져있는 객체.
+      let answer;
+
+      for (let x of s) {
+        if (sH.has(x)) { // sH 맵 객체에 x라는 문자열의 키가 존재하냐? 물어보는 것, 존재하면 카운팅이 1,2,3,..으로 들어가진다. 여기서 x는 str의 'BACBACCA...'문자열이다.   
+          sH.set(x, sH.get(x) + 1); //원래 키가 존재한다면? x라는 키에 기존값을 가져와서 +1을 해주면됨
+        } else { //만약에 없으면 새롭게 키를 만들어줘야하니까 다시 set생성자로 만들어준다.
+          sH.set(x, 1);
+        }
+      }
+      for (let [key, value] of sH) {
+        if (value > max) {  //밸류값이 기존 max보다 크면 최대값.
+          max = value;
+          answer = key; //우리가 원하는 것은 벨류의 키인 'c'
+        }
+      }
+      return answer;
+    }
+    let str = "BACBACCACCBDEDE";
+    console.log(solution(str));
+  </script>
+</body>
+
+</html>

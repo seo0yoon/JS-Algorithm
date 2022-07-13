@@ -15,7 +15,7 @@
       }
       for (let i = k; i < arr.length; i++) {
         sum = sum + arr[i] - arr[i - k]
-        answer = Math.max(answer, sum)
+        answer = Math.max(sum, answer)
       }
       return answer;
     }
