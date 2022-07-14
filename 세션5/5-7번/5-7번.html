@@ -1,0 +1,37 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>출력결과</title>
+</head>
+
+<body>
+  <script>
+    function solution(str1, str2) {
+      let answer = 'YES'
+      let sH = new Map();
+      for (let x of str1) {
+        if (sH.has(x)) {
+          sH.set(x, sH.get(x) + 1);
+        } else {
+          sH.set(x, 1)
+        }
+      }
+      console.log(sH)
+      for (let x of str2) {
+        if (!sH.has(x) || sH.get(x) === 0) {
+          //sH에 문자열의 키가 없거나, sH의 키가 0이라면? : str1과 비교해서 키가 없거나 키가 0이면 두 문자열의 알파벳이 다른거니까 no
+          return 'NO'
+        } else {
+          sH.set(x, sH.get(x) - 1); //기존의 문자열을 가지고 있으면 키를 -1빼주기. why? 하나씩 제거해서 결국엔 0이되면 두 문자열이 다른거니까 
+        }
+      }
+      return answer;
+    }
+    let a = "abaCC";
+    let b = "Caaab";
+    console.log(solution(a, b));
+  </script>
+</body>
+
+</html>
