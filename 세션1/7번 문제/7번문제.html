@@ -10,14 +10,12 @@
     function solution(day, arr) {
       let answer = 0;
       for (let i = 0; i < arr.length; i++) {
-        if (arr[i] % 10 === day) { //arr 인덱스를 10으로 나눴을때 나머지가 day와 같을때
-          answer = answer + 1
-        }
+        if (arr[i] % 10 === day) answer = answer + 1
       }
       return answer;
     }
-    arr = [25, 23, 11, 47, 53, 17, 33];
-    console.log(solution(7, arr));
+    arr = [12, 20, 54, 30, 87, 91, 30];
+    console.log(solution(0, arr));
   </script>
 </body>
 
