@@ -8,15 +8,14 @@
 <body>
   <script>
     function solution(s) {
-      let answer = "";
+      let answer = '';
       for (let i = 0; i < s.length; i++) {
-        if (s[i]) {
-          answer = answer + s[i].toUpperCase()
-        }
+        if (s[i] === s[i].toLowerCase()) answer = answer + s[i].toUpperCase()
+        else answer = answer + s[i]
       }
       return answer;
     }
-    let str = "ItisTimeTostudy";
+    let str = "ItisTimeToStudy";
     console.log(solution(str));
   </script>
 </body>

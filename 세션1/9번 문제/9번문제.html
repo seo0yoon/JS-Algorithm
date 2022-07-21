@@ -8,17 +8,14 @@
 <body>
   <script>
     function solution(s) {
-      let answer = ''
+      let answer = '';
       for (let i = 0; i < s.length; i++) {
-        if (s[i] === 'P') {
-          answer = answer + '#'
-        } else {
-          answer = answer + s[i]
-        }
+        if (s[i] === 'A') answer = answer + '#'
+        else answer = answer + s[i]
       }
       return answer;
     }
-    let str = "APPLE";
+    let str = "BANANA";
     console.log(solution(str));
   </script>
 </body>
