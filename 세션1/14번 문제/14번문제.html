@@ -8,13 +8,11 @@
 <body>
   <script>
     function solution(s) {
-      let max = Number.MIN_SAFE_INTEGER;
-      let answer = "";
+      let answer = '', max = Number.MIN_SAFE_INTEGER;
       for (let i = 0; i < s.length; i++) {
         if (s[i].length > max) {
-          max = s[i].length // 가장 큰 길이의 값을 max에 저장시킴
+          max = s[i].length
           answer = s[i]
-          // 반복문이 끝나지않은 상태에서 answer 값에 s[i]를 넣어 문자열을 출력시킴
         }
       }
       return answer;
