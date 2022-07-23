@@ -8,12 +8,9 @@
 <body>
   <script>
     function solution(s) {
-      let answer = "";
-
+      let answer = '';
       for (let i = 0; i < s.length; i++) {
-        if (!answer.includes(s[i])) {
-          answer = answer + s[i]
-        }
+        if (!answer.includes(s[i])) answer = answer + s[i]
       }
       return answer;
     }
