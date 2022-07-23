@@ -9,15 +9,12 @@
   <script>
     function solution(s) {
       let answer = [];
-
       for (let i = 0; i < s.length; i++) {
-        if (!answer.includes(s[i])) {
-          answer.push(s[i])
-        }
+        if (!answer.includes(s[i])) answer.push(s[i]);
       }
       return answer;
     }
-    let str = ["good", "time", "good", "time", "student"];
+    let str = ["good", "main", "time", "main", "good", "time", "student"];
     console.log(solution(str));
   </script>
 </body>
