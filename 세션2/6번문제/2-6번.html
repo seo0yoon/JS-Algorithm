@@ -8,27 +8,7 @@
 <body>
   <script>
     function solution(arr) {
-      let sumRow = 0; //행의 더한값 저장할 변수
-      let sumCol = 0; //열의 더한값 저장할 변수
-      let answer = 0;
-      let dia1 = 0; //대각선
-      let dia2 = 0;
-
-      for (let i = 0; i < arr.length; i++) {
-        sumRow = 0;
-        sumCol = 0;
-        for (let j = 0; j < arr.length; j++) {
-          sumRow = sumRow + arr[i][j] // 행을 다 돌아서 저장하려는 코드
-          sumCol = sumCol + arr[j][i] // 열을 다 돌아서 저장하려는 코드
-        }
-        answer = Math.max(sumRow, sumCol, answer)
-      }
-
-      for (let i = 0; i < arr.length; i++) {
-        dia1 = dia1 + arr[i][i]
-        dia2 = dia2 + arr[i][arr.length - i - 1]
-      }
-      answer = Math.max(dia1, dia2, answer)
+      let answer;
       return answer;
     }
     let arr = [[10, 13, 10, 12, 15],
