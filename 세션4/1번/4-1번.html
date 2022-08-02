@@ -8,7 +8,7 @@
 <body>
   <script>
     function solution(n, arr) {
-      let answer, sum, max = 0;
+      let answer = 0, sum = 0, max = 0;
       for (let i = 0; i < arr.length; i++) {
         sum = arr[i].toString().split('').reduce((a, currentLength) => {
           return a + Number(currentLength)

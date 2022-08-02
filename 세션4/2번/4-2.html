@@ -7,30 +7,21 @@
 
 <body>
   <script>
-    function isPrime(num) { //소수가 아닌 조건
-      if (num === 1) {
-        return false;
+    function isPrime(num) {
+      if (num === 1) return false;
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) return false;
       }
-      for (let i = 2; i < num; i++) { //1은 소수가 아니라고 위에서 걸렀고, .lenght를 붙이지 않은 이유는 ? length는 //문자열과 배열 탐색할때만 사용한다. i < num은 숫자를 다 도는 것
-        if (num % i === 0) { //num이 2고 i(2)로 나눴을때 나머지는 0이고 그럼 소수가 아니다. 그래서 false 반환
-          return false;
-        }
-      }
-      return true; //위의 조건문을 둘다 걸려줘야해서 return
+      return true;
     }
 
     function solution(arr) {
-      let answer = [];
-      let reverse;
+      let answer = [], reverse;
       for (let i = 0; i < arr.length; i++) {
         reverse = parseInt(arr[i].toString().split('').reverse().join(''));
-        if (isPrime(reverse)) { // 솔루션 함수가 실행하면 for문을 돌고, 조건문을 실행한다. 조건문안에 숫자가 소수인지 아니지를 넣어줘야하니
-          //위에서 만든 isPrime 함수를 넣고 매개변수로 reverse를 넣어준다. 만약 숫자 32면 reverse를 거쳐서 23이 되고,
-          //isPrime함수에 num이 23이 들어가고, 소수인지 아닌지를 판별해 true, false로 반환한다.
-          answer.push(reverse) // 최종적으로 걸른 값을 answer에 push해준다. (배열에 넣어줘야해서 push)
-        } //숫자이기때문에 문자열로 바꾸고, 쪼갠다음, 뒤집고, 합쳐준다.
+        if (isPrime(reverse)) answer.push(reverse)
       }
-      return reverse;
+      return answer;
     }
     let arr = [32, 55, 62, 20, 250, 370, 200, 30, 100];
     console.log(solution(arr));
